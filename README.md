@@ -15,7 +15,7 @@ The micro network looks to solve this problem using a shared global network for 
 
 ## Contents
 
-- [Status](#status)
+- [Project Status](#project-status)
 - [Getting Started](#getting-started)
   * [Install](#install)
   * [Connect](#connect)
@@ -33,7 +33,7 @@ The micro network looks to solve this problem using a shared global network for 
 - [Economics](#economics)
 - [Glossary](#glossary-of-terms)
 
-## Status
+## Project Status
 
 The project is currently in the early design phase. This document serves as the starting point. 
 
