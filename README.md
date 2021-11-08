@@ -2,7 +2,7 @@
 
 The micro network is an **open network for micro services**.
 
-The network is still in early development. This document serves as a starting point for the design.
+*Note: The network is still in early development. This document serves as a starting point for the design.*
 
 ## Overview
 
