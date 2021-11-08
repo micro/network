@@ -46,8 +46,6 @@ Below is a quick guide to getting started.
 From source
 
 ```
-export GO111MODULE=on
-
 go get github.com/micro/micro
 ```
 
