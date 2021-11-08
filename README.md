@@ -92,7 +92,7 @@ communication protocol, service discovery system, secure governance, service run
 At the high level we're using the open source micro toolkit as the foundation for an overlay network on the internet and a platform for microservices.
 Each user runs a local node which provides access to the network, a runtime for running services, a local http api gateway and web browser.
 
-![Architecture](../images/arch1.jpg)
+![Architecture](images/arch1.jpg)
 
 In future this design will include automatic data synchronization and backup for long term storage.
 
@@ -102,7 +102,7 @@ The network features a p2p compute runtime with a high bandwidth backbone. The n
 The design is such that whatever resource you put in, you get back distributed across the network. It's global and shared by default. You can
 buy more resource using tokens but you'll also get tokens for any requests made to your services.
 
-![Architecture](../images/arch2.jpg)
+![Architecture](images/arch2.jpg)
 
 The network is evolutionary and our goal is to reach 1B nodes with over 10x more services running on the network itself.
 
@@ -112,7 +112,7 @@ The network provides a micro service runtime. Each service can be used as a buil
 This layering allows the creation of unique services on a foundation of hundreds of others. This is the microservice
 architecture pattern used by Google, Netflix, Uber and others which we're bringing to the masses.
 
-![Architecture](../images/arch3.png)
+![Architecture](images/arch3.png)
 
 Developers contribute services to the network and build on each others work.
 
