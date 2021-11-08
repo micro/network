@@ -184,7 +184,7 @@ In the case of micro, the "network" is an overloaded term both referring to the 
 provide compute and also the overlaying communication system used for services to discover and communicate with each other.
 
 In this case we'll speak to the service layer network. The micro network provided to developers consists of four pieces;
-registry, transport, broker and client/server. These components can be found in [Go Micro](https://github.com/micro/go-micro)
+registry, transport, broker and client/server. These components can be found in [Micro](https://github.com/micro/micro)
 for more info.
 
 The registry provides a service discovery mechanism for applications in the network. Think of this as DNS but in a way that's
