@@ -142,7 +142,7 @@ a manner.
 
 Software will be downloaded from its public source form. It will then be built and run, all within the same location. Updates to
 the source will result in periodic generation of new versions of a running service. Previous instantiations will remain for
-their lifetime or until they die for any unexpectected reason. This is evolution and we believe evolution is the most powerful
+their lifetime or until they die for any unexpected reason. This is evolution and we believe evolution is the most powerful
 method for software delivery.
 
 ### Runtime
