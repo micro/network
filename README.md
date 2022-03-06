@@ -103,14 +103,14 @@ micro status
 
 ## Architecture
 
-The network is a globally distributed network based on existing open source technology developed by micro and others.
+The network is a globally distributed network based on existing open source technology developed by Micro and others.
 It provides the core requirements for collaborative service development at scale. This includes a common
 communication protocol, service discovery system, secure governance, service runtime and resource exchange model.
 
 ### High Level
 
-At the high level we're using the open source micro toolkit as the foundation for an overlay network on the internet and a platform for micro services.
-Each user runs a local node which provides access to the network, a runtime for running services, a local http api gateway and web browser.
+At the high level we're using the open source Micro platform as the foundation for an overlay network on the internet and a runtime for Micro services.
+Each user runs a local node which provides access to the network, a runtime for running services, a local api gateway and web browser.
 
 ![Architecture](images/arch1.jpg)
 
