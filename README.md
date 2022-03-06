@@ -4,17 +4,9 @@ An open network for Micro services.
 
 *Note: The network is still in early development. This document serves as a starting point for the design.*
 
-## Overview
-
-The power of collaborative development has mostly been restricted to trusted environments within organisations.
-These platforms unlock incredible productivity and compounding value with every new service added. They provide
-an always-on runtime and known developer workflow for engineers to collaborate on. This has largely been
-difficult to achieve outside of organisations.
-
-The micro network looks to solve this problem using a shared global network for micro services.
-
 ## Contents
 
+- [Overview](#overview)
 - [Project Status](#project-status)
 - [Getting Started](#getting-started)
   * [Install](#install)
@@ -33,6 +25,15 @@ The micro network looks to solve this problem using a shared global network for 
 - [Value Exchange](#value-exchange)
 - [Economics](#economics)
 - [Glossary](#glossary-of-terms)
+
+## Overview
+
+The power of collaborative development has mostly been restricted to trusted environments within organisations.
+These platforms unlock incredible productivity and compounding value with every new service added. They provide
+an always-on runtime and known developer workflow for engineers to collaborate on. This has largely been
+difficult to achieve outside of organisations.
+
+The micro network looks to solve this problem using a shared global network for micro services.
 
 ## Project Status
 
