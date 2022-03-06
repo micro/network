@@ -28,9 +28,9 @@ The micro network looks to solve this problem using a shared global network for 
   * [Runtime](#runtime)
   * [Governance](#governance)
   * [Network](#network)
-  * [Protocol](#protocol)
-  * [Collaboration](#collaboration)
-  * [Value Exchange](#value-exchange)
+- [Protocol](#protocol)
+- [Collaboration](#collaboration)
+- [Value Exchange](#value-exchange)
 - [Economics](#economics)
 - [Glossary](#glossary-of-terms)
 
@@ -310,7 +310,7 @@ In the event you want to subscribe to a topic you must specify a queue.
 ```
 
 
-### Collaboration
+## Collaboration
 
 It is not enough to provide an environment for running applications. Many platforms already exist for this function. Individuals
 can use cloud hosting to do this. Networks are being built to run decentralized applications (dApps). This is all good and well
@@ -332,7 +332,7 @@ the scale of Google and others in a coordinated effort without any central inter
 Collaboration will be our central focus, not compute, not storage, nor singular applications, but instead multi application
 services built collectively by the network.
 
-### Value Exchange
+## Value Exchange
 
 What do we mean by value exchange? It is not enough to provide an environment for collaborative development. We need some way of
 rewarding those who are participants in the network and provide resources or services to the network itself.
