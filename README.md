@@ -28,6 +28,7 @@ The micro network looks to solve this problem using a shared global network for 
   * [Runtime](#runtime)
   * [Governance](#governance)
   * [Network](#network)
+  * [Protocol](#protocol)
   * [Collaboration](#collaboration)
   * [Value Exchange](#value-exchange)
 - [Economics](#economics)
@@ -207,6 +208,105 @@ focus on the domain itself. Ideally inter-service communication should be though
 later on flow based programming.
 
 The network encapsulates low level details of distributed system communication and allows the developer to focus on whats important.
+
+## Protocol
+
+The network is based on MUCP (micro communication protocol).
+
+The protocol is a very simple transport agnostic set of headers and an encoded message body. The protocol supports request/response, 
+bidirectional streaming and asynchronous message broadcasting. Where the transport or broker accepts headers (such as http) the message headers 
+will be encoded in the transport headers. Otherwise the entire header and message will be encoded in an envelope. Our preference is to use protobuf 
+but the protocol should scan for a starting json delimiter `{` to know whether to decode to json.
+
+The protocol covers 3 forms of communication: 
+
+- [Call](#call) - Sending a request and synchronously receiving a response
+- [Stream](#stream) - Maintaining an open connection over which messages are passed back and forth
+- [Publish](#publish) - Asynchronously broadcast events to topics with multiple interested parties
+
+### Call
+
+Request/Response communication allows a single request to be sent and a response to be received. The request and response 
+are of identical format to correlate one to one mapping. A request should be passed with a unique id, name of the service, 
+the endpoint being called and the content-type. 
+
+An example request.
+
+```
+{
+	Header: {
+		"Micro-Id": "d02d5da0-14dc-11e9-ab14-d663bd873d93",
+		"Micro-Service": "greeter",
+		"Micro-Endpoint": "Say.Hello",
+		"Content-Type": "application/protobuf",
+	}
+	Body: []byte(...)
+}
+```
+
+In the event of an error we return it as a header. This may also be returned in the body.
+
+```
+{
+	Header: {
+		"Micro-Id": "d02d5da0-14dc-11e9-ab14-d663bd873d93",
+		"Micro-Service": "greeter",
+		"Micro-Endpoint": "Say.Hello",
+		"Micro-Error": {"id":"greeter.Say.Hello","code":500,"detail":"Failed greeting","status":"Internal Server Error"},
+	}
+}
+```
+
+### Stream
+
+A stream is a long live connection over which messages are passed back and forth. This could be request response or streaming updates 
+such as gps location from a client to the server. A stream uses identical request/response semantics except it also includes a 
+stream id.
+
+```
+{
+        Header: {
+                "Micro-Id": "d02d5da0-14dc-11e9-ab14-d663bd873d93",
+		"Micro-Stream": "user.1"
+                "Micro-Service": "geolocation",
+                "Micro-Endpoint": "Gps.Update",
+                "Content-Type": "application/protobuf",
+        }
+        Body: []byte(...)
+}
+```
+
+### Publish
+
+Messages can be broadcast asynchronously to a topic. This requires no knowledge of subscribers or interested parties a head of time. 
+It provides a method for notification of events without requiring a response. In the event no subscribers exist, the messages 
+can be saved in an inbox until subscribers are present to retrieve the messages at a later time.
+
+An example broadcast message.
+
+```
+{
+	Header: {
+		"Micro-Id": "d02d5da0-14dc-11e9-ab14-d663bd873d93",
+		"Micro-Topic": "events",
+		"Content-Type": "application/protobuf",
+	}
+	Body: []byte(...)
+}
+```
+
+In the event you want to subscribe to a topic you must specify a queue.
+
+```
+{
+        Header: {
+                "Micro-Id": "d02d5da0-14dc-11e9-ab14-d663bd873d93",
+                "Micro-Topic": "events",
+                "Micro-Queue": "customer",
+        }
+}
+```
+
 
 ### Collaboration
 
