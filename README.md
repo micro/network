@@ -128,7 +128,7 @@ The network is evolutionary and our goal is to reach 1B nodes with over 10x more
 
 ### Services
 
-The network provides a micro service runtime. Each service can be used as a building block for the next.
+The network provides a Micro service runtime. Each service can be used as a building block for the next.
 This layering allows the creation of unique services on a foundation of hundreds of others. This is the microservice
 architecture pattern used by Google, Netflix, Uber and others which we're bringing to the masses.
 
@@ -167,7 +167,7 @@ method for software delivery.
 
 ### Runtime
 
-While our primary focus is to provide a globally distributed network for micro services this can't be fully realised without a
+While our primary focus is to provide a globally distributed network for Micro services this can't be fully realised without a
 method of deploying software. It's important that in the context of creating evolutionary systems we provide a runtime which
 supports this method of development. The micro runtime is a process management system tightly coupled to the network itself
 with the ability to run applications from source code.
@@ -191,7 +191,7 @@ on the order of 1B nodes. With likely 10x more services. Even if the task of man
 defeats the purpose of our goals) it would be impossible to perform such coordination at scale. Because of this the system
 we develop will have to be self governing.
 
-The micro network will include self governance driven through automation. No humans will be involved in commanding the placement
+The Micro network will include self governance driven through automation. No humans will be involved in commanding the placement
 of services or have the ability to shut them down. The governance mechanism for all services and the network itself will be in code,
 it will be a service running on the network itself. It will also be an open source service anyone can see the code for and
 contribute to.
@@ -200,7 +200,7 @@ Like any other service, this system will be evolutionary.
 
 ### Network
 
-In the case of micro, the "network" is an overloaded term both referring to the underlying system made up of nodes or peers which
+In the case of Micro, the "network" is an overloaded term both referring to the underlying system made up of nodes or peers which
 provide compute and also the overlaying communication system used for services to discover and communicate with each other.
 
 In this case we'll speak to the service layer network. The micro network provided to developers consists of four pieces;
@@ -388,3 +388,4 @@ Here's a good explanation of [Token Economics](https://www.investinblockchain.co
 - **Peer Node** - is a host which runs *services* in the network
 - **Service** - is a process which runs in the network and provides some utility
 - **Token** - is an economic incentive used in exchange for the use of a service
+- **Server** - is the Micro server which is run locally to connect to the network
