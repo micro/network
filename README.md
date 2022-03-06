@@ -40,7 +40,7 @@ The project is currently in the early design phase. This document serves as the 
 
 ## Getting Started
 
-Below is a quick guide to getting started.
+Below is a quick guide to getting started (for the future).
 
 ### Install
 
