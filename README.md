@@ -213,6 +213,8 @@ The network encapsulates low level details of distributed system communication a
 
 The network is based on MUCP (micro communication protocol).
 
+### Overview
+
 The protocol is a very simple transport agnostic set of headers and an encoded message body. The protocol supports request/response, 
 bidirectional streaming and asynchronous message broadcasting. Where the transport or broker accepts headers (such as http) the message headers 
 will be encoded in the transport headers. Otherwise the entire header and message will be encoded in an envelope. Our preference is to use protobuf 
