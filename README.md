@@ -68,7 +68,7 @@ Bootup micro and connect to the network
 micro server --peer
 ```
 
-### Query
+### Browse
 
 Once you've joined you should be able to see other nodes, services and routes on the network.
 
@@ -84,6 +84,20 @@ micro network routes
 
 # Peer graph
 micro network graph
+```
+
+### Services
+
+Services which exist in [github.com/micro/services](https://github.com/micro/services) can be run from source. 
+
+```
+# run helloworld
+micro run github.com/micro/services/helloworld
+```
+
+```
+# check the status
+micro status
 ```
 
 ## Architecture
