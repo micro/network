@@ -4,11 +4,6 @@ An open network for Micro services.
 
 ## Overview
 
-The power of collaborative development has mostly been restricted to trusted environments within organisations.
-These platforms unlock incredible productivity and compounding value with every new service added. They provide
-an always-on runtime and known developer workflow for engineers to collaborate on. This has largely been
-difficult to achieve outside of organisations.
-
 The Micro network will look to solve this problem using a shared global network for Micro services. In an attempt to 
 aggregate power using a crowdsourced manner, Micro will enable users to run their own nodes that offer services 
 to anyone else they peer with. Each node will act as a gateway to the entire network, allowing the owner to benefit 
