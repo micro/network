@@ -20,4 +20,4 @@ The project is currently in the early design phase.
 
 ## Docs
 
-To learn more see the [docs].
+To learn more see the [docs](docs).
