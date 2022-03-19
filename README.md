@@ -14,7 +14,7 @@ aggregate power using a crowdsourced manner, Micro will enable users to run thei
 to anyone else they peer with. Each node will act as a gateway to the entire network, allowing the owner to benefit 
 financially from it's use.
 
-## Project Status
+## Status
 
 The project is currently in the early design phase.
 
