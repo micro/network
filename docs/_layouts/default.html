@@ -27,7 +27,7 @@
       <h1>
         <a href="{{ "/" | absolute_url }}" class="title" style="color: black; margin-right: 50px;">
         {% if site.logo %}
-        <img src="{{ site.logo | absolute_url }}" height=auto width=100px style="display: inline; vertical-align: middle;"/> 
+        <img src="{{ site.logo | absolute_url }}" height=auto width=100px style="display: inline; vertical-align: middle;"/> {{ site.title }}
         {% else %}
 	{{ site.title }}
         {% endif %}

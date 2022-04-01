@@ -26,7 +26,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  micro
 google_analytics: 
-#logo: "/images/micro.png"
+logo: "/images/mu.png"
 
 # Pagination
 paginate: 15
