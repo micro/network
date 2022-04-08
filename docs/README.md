@@ -64,10 +64,10 @@ docker pull micro/micro
 Bootup micro and connect to the network
 
 ```
+# run the server
 micro server
-```
 
-```
+# run the gateway
 micro run github.com/micro/network/gateway
 ```
 
