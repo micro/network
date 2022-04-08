@@ -64,7 +64,14 @@ docker pull micro/micro
 Bootup micro and connect to the network
 
 ```
-micro server --peer
+# run micro
+micro server
+
+# run services
+micro run github.com/micro/services/helloworld
+
+# run gateway
+micro run github.com/micro/network/gateway
 ```
 
 ### Browse
