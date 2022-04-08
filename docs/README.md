@@ -2,29 +2,6 @@ An open network for Micro services.
 
 *Note: The network is still in early development. This document serves as a starting point for the design.*
 
-## Contents
-
-- [Overview](#overview)
-- [Project Status](#project-status)
-- [Getting Started](#getting-started)
-  * [Install](#install)
-  * [Connect](#connect)
-  * [Browse](#browse)
-  * [Services](#services)
-- [Architecture](#architecture)
-  * [Features](#features)
-  * [Services](#services)
-  * [Identity](#identity)
-  * [Evolution](#evolution)
-  * [Runtime](#runtime)
-  * [Governance](#governance)
-  * [Network](#network)
-- [Protocol](#protocol)
-- [Collaboration](#collaboration)
-- [Value Exchange](#value-exchange)
-- [Economics](#economics)
-- [Glossary](#glossary-of-terms)
-
 ## Overview
 
 The power of collaborative development has been restricted to trusted environments within organisations.
