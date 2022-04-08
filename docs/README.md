@@ -97,9 +97,7 @@ Services which exist in [github.com/micro/services](https://github.com/micro/ser
 ```
 # run helloworld
 micro run github.com/micro/services/helloworld
-```
 
-```
 # check the status
 micro status
 ```
