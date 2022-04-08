@@ -296,9 +296,10 @@ Here's a good explanation of [Token Economics](https://www.investinblockchain.co
 ## Glossary of Terms
 
 - **Network** - is the entire system for communication and coordination
-- **Backbone** - is the core public high bandwidth main network itself
+- **Gateway** - the interconnect between peer nodes on the network
+- **Backbone** - is the core public high bandwidth for the network itself
 - **Super Node** - is a host which runs the *backbone* of the network
 - **Peer Node** - is a host which runs *services* in the network
 - **Service** - is a process which runs in the network and provides some utility
 - **Token** - is an economic incentive used in exchange for the use of a service
-- **Server** - is the Micro server which is run locally to connect to the network
+- **Server** - is the Micro server which runs the services locally or in the cloud
