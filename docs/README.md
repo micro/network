@@ -65,7 +65,9 @@ Bootup micro and connect to the network
 
 ```
 micro server
+```
 
+```
 micro run github.com/micro/network/gateway
 ```
 
