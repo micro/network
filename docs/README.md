@@ -20,8 +20,8 @@ communication protocol, service discovery system, secure governance, service run
 
 ### High Level
 
-At the high level we're using the open source [Micro](https://github.com/micro/micro) platform as the foundation for an overlay 
-network on the internet and a runtime for Micro services. Each user runs a local server which provides access to the network, 
+At the high level we're using the open source [Micro](https://github.com/micro/micro) platform as the foundation for API 
+first development and a runtime for Micro services. Each user runs a local server which provides access to the network, 
 a runtime for running services, a local api gateway and web browser.
 
 ![Architecture](images/arch1.jpg)
