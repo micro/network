@@ -14,7 +14,7 @@ financially from it's use.
 
 ## Architecture
 
-The network is a globally distributed network based on existing open source technology developed by Micro and others.
+The network is globally distributed based on existing open source technologies developed by Micro and others.
 It provides the core requirements for collaborative service development at scale. This includes a common
 communication protocol, service discovery system, secure governance, service runtime and resource exchange model.
 
