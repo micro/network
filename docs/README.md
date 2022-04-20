@@ -294,6 +294,19 @@ system into the network to provide this resource usage model via exchange of tok
 
 Here's a good explanation of [Token Economics](https://www.investinblockchain.com/token-economics/).
 
+## Interface
+
+The Micro development model has been proven out over a number of years using the [Go](https://go.dev) based programming language and 
+supplementary client libraries which enable broad access to developers but mass appeal and consumption of services without programming will 
+require an entirely new approach.
+
+We propose the development of a new client interface to compliment the development model which focuses on the end consumer. Where developers 
+and operators will focus on the infrastructure and programming, the new interface will enable access to anyone services via web or mobile 
+clients. Ideally using existing well known constructs like web forms and messaging.
+
+A focus on delivering an end consumer facing experience keeps us from building sand castles and dreams only to be washed away by the sea. 
+Ultimately the value of the network is in it's consumption, not just by developers, but by every human being on earth.
+
 ## Glossary of Terms
 
 - **Network** - is the entire system for communication and coordination
