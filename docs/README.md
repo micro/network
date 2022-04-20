@@ -2,10 +2,10 @@
 
 ## Overview
 
-The power of collaborative development has been restricted to trusted environments within organisations.
+The power of collaborative development has mostly been restricted to trusted environments within organisations.
 These platforms unlock incredible productivity and compounding value with every new service added. They provide
-an always-on runtime and known developer workflow for engineers to collaborate on. And they offer a single point 
-of consumption to the outside world. This has largely been difficult to achieve outside of organisations.
+an always-on runtime and known developer workflow for engineers to collaborate on. This has largely been difficult 
+to achieve outside of organisations.
 
 The Micro network looks to solve this problem by creating a shared global services network. In an attempt to 
 aggregate power using a crowdsourced approach, Micro will enable users to run their own nodes that offer services 
