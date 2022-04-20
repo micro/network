@@ -46,7 +46,9 @@ architecture pattern used by Google, Netflix, Uber and others which we're bringi
 
 ![Architecture](images/arch3.png)
 
-Developers contribute services to the network and build on each others work.
+Developers contribute services to the network and build on each others work. Services are open source by default 
+and those built by Micro reside in the shared monorepo [micro/services](https://github.com/micro/services), where 
+anyone can contribute via a pull request.
 
 ### Identity
 
