@@ -300,8 +300,8 @@ The Micro development model has been proven out over a number of years using the
 supplementary client libraries which enable broad access to developers but mass appeal and consumption of services without programming will 
 require an entirely new approach.
 
-We propose the development of a new client interface to compliment the development model which focuses on the end consumer. Where developers 
-and operators will focus on the infrastructure and programming, the new interface will enable access to anyone services via web or mobile 
+We propose the development of a client interface to compliment the development model which focuses on the end consumer. Where developers 
+and operators will focus on the infrastructure and programming, the client interface will enable anyone to access services via web or mobile 
 clients. Ideally using existing well known constructs like web forms and messaging.
 
 A focus on delivering an end consumer facing experience keeps us from building sand castles and dreams only to be washed away by the sea. 
