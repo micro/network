@@ -334,6 +334,13 @@ No system of any kind that can benefit mankind should be built without taking in
 access to even begin participating. We will ensure that whatever is built is not just benefiting the 1% but actually making a difference 
 through conscious effort.
 
+## Operations
+
+The network's ultimate goal is to be self governing, but the resources and people it takes to get to that place costs money. So 2.5% of all 
+profit will also go towards the network operations and ensuring it's continued success for the foreseeable future. This will include a 
+number of software engineers to maintain the code base, platform engineers to ensure the core backbone is running and some level of 
+financial and operational management. All will be governed through traditional legal entities until it makes sense not to do so.
+
 ## Glossary of Terms
 
 - **Network** - is the entire system for communication and coordination
