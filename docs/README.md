@@ -341,6 +341,21 @@ profit will also go towards the network operations and ensuring it's continued s
 number of software engineers to maintain the code base, platform engineers to ensure the core backbone is running and some level of 
 financial and operational management. All will be governed through traditional legal entities until it makes sense not to do so.
 
+## Execution
+
+The network will start by implementing a working prototype of a gateway that can interconnect multiple Micro deployments across the globe 
+using the MUCP protocol. We'll then move onto the transactional layer for economic incentive and value exchange. This will likely reuse 
+existing cryptocurrency protocols rather than attempting to implement one from scratch. Once this is established, we'll start to invite 
+users to test the network before moving on to reputation based scoring and the client side interface for external consumption.
+
+Bootstrapping should take 18-24 months with a need to fund the project to get off the ground.
+
+## Funding
+
+Having tried many forms of funding in the past, it's clear we need complete alignment from those involved and so finding the right 
+participants from the get go is incredibly important. There must be total clarity on the motivations of those joining and how they 
+stand to benefit. The efforts of the project cannot be overshadowed by those seeking power law distributions.
+
 ## Glossary of Terms
 
 - **Network** - is the entire system for communication and coordination
