@@ -309,7 +309,7 @@ Ultimately the value of the network is in it's consumption, not just by develope
 
 ## Motivation
 
-The world is moving to be driven entirely by technology. Part of that move involves shifting our experiences to digital rather than physical 
+The world is moving to being driven entirely by technology. Part of that move involves shifting our experiences to digital rather than physical 
 services. In a world where everything is a service, we imagine there needs to be a system and model for development and interaction with 
 these services. What's more, there's an opportunity to provide an economic incentive to every human being to participate and benefit from 
 such a network.
