@@ -322,6 +322,18 @@ are openly and transparently available for all to see.
 The micro network's purpose is to create a truly open and free network for services that anyone can use, operate and benefit from without 
 intermediaries, without abuse or exploitation, and without the purview of the current powers that be.
 
+## Altruism
+
+As part of this endeavour, we are aware that the network will create significant amounts of financial liquidity for a number of people, including 
+those running services. Yet, there is another demographic of people who will not be so privileged, who will no have access and will not be 
+capable of participating directly. To those, we want to ensure they are maximally benefitting from this effort also. 
+
+2.5% of all profit flowing through the network will be donated to the least privileged by way of charitable donation.
+
+No system of any kind that can benefit mankind should be built without taking into consideration the least privileged of all, those without 
+access to even begin participating. We will ensure that whatever is built is not just benefiting the 1% but actually making a difference 
+through conscious effort.
+
 ## Glossary of Terms
 
 - **Network** - is the entire system for communication and coordination
