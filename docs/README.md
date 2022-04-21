@@ -307,6 +307,21 @@ clients. Ideally using existing well known constructs like web forms and messagi
 A focus on delivering an end consumer facing experience keeps us from building sand castles and dreams only to be washed away by the sea. 
 Ultimately the value of the network is in it's consumption, not just by developers, but by every human being on earth.
 
+## Motivation
+
+The world is moving to be driven entirely by technology. Part of that move involves shifting our experiences to digital rather than physical 
+services. In a world where everything is a service, we imagine there needs to be a system and model for development and interaction with 
+these services. What's more, there's an opportunity to provide an economic incentive to every human being to participate and benefit from 
+such a network.
+
+In our current world, the few dominate the many. The term FANG, has come to reference the global tech incumbents that rule our lives, our 
+digital footprint and our minds. They benefit financially from all our actions and deliver addictive systems that are impossible to break 
+free of. We have a chance to build a system in which these behaviours are removed, where the morals and ethics are coded into systems which 
+are openly and transparently available for all to see.
+
+The micro network's purpose is to create a truly open and free network for services that anyone can use, operate and benefit from without 
+intermediaries, without abuse or exploitation, and without the purview of the current powers that be.
+
 ## Glossary of Terms
 
 - **Network** - is the entire system for communication and coordination
