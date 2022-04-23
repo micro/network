@@ -1,3 +1,5 @@
+An open network for Micro services.
+
 *Note: The network is still in early development. This document serves as a starting point for the design.*
 
 ## Overview
