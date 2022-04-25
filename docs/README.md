@@ -1,9 +1,5 @@
 An open network for Micro services
 
-*Author: Asim Aslam*
-
-*Last Edited: April 25th 2022*
-
 ## Overview
 
 The power of collaborative development has mostly been restricted to trusted environments within organisations.
@@ -370,3 +366,7 @@ stand to benefit. The efforts of the project cannot be overshadowed by those see
 - **Service** - is a process which runs in the network and provides some utility
 - **Token** - is an economic incentive used in exchange for the use of a service
 - **Server** - is the Micro server which runs the services locally or in the cloud
+
+*Author: Asim Aslam*
+
+*Last Edited: April 25th 2022*
