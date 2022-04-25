@@ -1,7 +1,7 @@
 An open network for Micro services
 
-*Author: Asim Aslam*
-*Last Edited: April 25th 2022*
+*Author: Asim Aslam
+Last Edited: April 25th 2022*
 
 ## Overview
 
