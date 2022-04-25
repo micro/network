@@ -309,23 +309,23 @@ Ultimately the value of the network is in it's consumption, not just by develope
 
 ## Motivation
 
-The world is moving to being driven entirely by technology. Part of that move involves shifting our experiences to digital rather than physical 
-services. In a world where everything is a service, we imagine there needs to be a system and model for development and interaction with 
+The world is moving towards being driven entirely by technology. Part of that move involves shifting our experiences to digital rather than 
+physical services. In a world where everything is a service, we imagine there needs to be a system for interaction and model of development for 
 these services. What's more, there's an opportunity to provide an economic incentive to every human being to participate and benefit from 
 such a network.
 
 In our current world, the few dominate the many. The term FANG, has come to reference the global tech incumbents that rule our lives, our 
 digital footprint and our minds. They benefit financially from all our actions and deliver addictive systems that are impossible to break 
 free of. We have a chance to build a system in which these behaviours are removed, where the morals and ethics are coded into systems which 
-are openly and transparently available for all to see.
+are openly and transparently available for all to see and use.
 
-The micro network's purpose is to create a truly open and free network for services that anyone can use, operate and benefit from without 
-intermediaries, without abuse or exploitation, and without the purview of the current powers that be.
+## Mission
 
-## Altruism
+The micro network's purpose is to create a truly open and free network for services that anyone can participate in and benefit from without 
+intermediaries, without abuse or exploitation, and without the purview of the current powers that be. This will enable global free trade.
 
 As part of this endeavour, we are aware that the network will create significant amounts of financial liquidity for a number of people, including 
-those running services. Yet, there is another demographic of people who will not be so privileged, who will no have access and will not be 
+those running services. Yet, there is another demographic of people who will not be so privileged, who will have no access and will not be 
 capable of participating directly. To those, we want to ensure they are maximally benefitting from this effort also. 
 
 2.5% of all profit flowing through the network will be donated to the least privileged by way of charitable donation.
