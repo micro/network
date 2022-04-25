@@ -367,6 +367,8 @@ stand to benefit. The efforts of the project cannot be overshadowed by those see
 - **Token** - is an economic incentive used in exchange for the use of a service
 - **Server** - is the Micro server which runs the services locally or in the cloud
 
+---
+
 *Author: Asim Aslam*
 
 *Last Edited: April 25th 2022*
