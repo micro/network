@@ -4,7 +4,7 @@ An open network for Micro services
 
 The power of collaborative development has mostly been restricted to trusted environments within organisations.
 These platforms unlock incredible productivity and compounding value with every new service added. They provide
-an always-on runtime and known developer workflow for engineers to collaborate on. This has largely been difficult 
+an always-on runtime and known developer workflow for engineers to collaborate on. This has been difficult 
 to achieve outside of organisations.
 
 The Micro network solves this problem by creating a global shared services network.
