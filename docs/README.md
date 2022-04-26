@@ -322,7 +322,7 @@ are openly and transparently available for all to see and use.
 ## Mission
 
 The micro network's purpose is to create a truly open and free network for services that anyone can participate in and benefit from without 
-intermediaries, without abuse or exploitation, and without the purview of the current powers that be. This will enable global free trade.
+intermediaries, without abuse or exploitation, and without the purview of the current powers that be.
 
 As part of this endeavour, we are aware that the network will create significant amounts of financial liquidity for a number of people, including 
 those running services. Yet, there is another demographic of people who will not be so privileged, who will have no access and will not be 
