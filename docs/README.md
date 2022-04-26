@@ -315,7 +315,7 @@ these services. What's more, there's an opportunity to provide an economic incen
 such a network.
 
 In our current world, the few dominate the many. The term FANG, has come to reference the global tech incumbents that rule our lives, our 
-digital footprint and our minds. They benefit financially from all our actions and deliver addictive systems that are impossible to break 
+digital footprint and more. They benefit financially from all our actions and deliver addictive systems that are impossible to break 
 free of. We have a chance to build a system in which these behaviours are removed, where the morals and ethics are coded into systems which 
 are openly and transparently available for all to see and use.
 
