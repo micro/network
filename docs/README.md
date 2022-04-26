@@ -301,8 +301,8 @@ supplementary client libraries which enable broad access to developers but mass 
 require an entirely new approach.
 
 We propose the development of a client interface to compliment the development model which focuses on the end consumer. Where developers 
-and operators will focus on the infrastructure and programming, the client interface will enable anyone to access services via web or mobile 
-clients. Ideally using existing well known constructs like web forms and messaging.
+and operators will focus on the infrastructure and programming, the client interface will enable anyone to access services via web or mobile. 
+Ideally using existing well known constructs like forms and messaging.
 
 A focus on delivering an end consumer facing experience keeps us from building sand castles and dreams only to be washed away by the sea. 
 Ultimately the value of the network is in it's consumption, not just by developers, but by every human being on earth.
