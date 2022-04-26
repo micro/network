@@ -7,9 +7,9 @@ These platforms unlock incredible productivity and compounding value with every 
 an always-on runtime and known developer workflow for engineers to collaborate on. This has largely been difficult 
 to achieve outside of organisations.
 
-The Micro network looks to solve this problem by creating a global shared services network. In an attempt to 
-aggregate power using a crowdsourced approach, Micro will enable users to run their own nodes that offer services 
-to anyone else they peer with. Each node will act as a gateway to the entire network, allowing the owner to benefit 
+The Micro network solves this problem by creating a global shared services network.
+Micro will enable users to run their own nodes that offer services to anyone else they 
+peer with. Each node will act as a gateway to the entire network, allowing the owner to benefit 
 financially from it's use.
 
 ## Architecture
