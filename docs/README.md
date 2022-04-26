@@ -2,7 +2,7 @@ An open network for Micro services
 
 ## Overview
 
-The power of collaborative development has mostly been restricted to trusted environments within organisations.
+The power of collaborative development has been restricted to trusted environments within organisations.
 These platforms unlock incredible productivity and compounding value with every new service added. They provide
 an always-on runtime and known developer workflow for engineers to collaborate on. This has been difficult 
 to achieve outside of organisations.
