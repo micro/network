@@ -4,10 +4,14 @@ An open network for Micro services.
 
 ## Overview
 
-The Micro network is a shared global network for Micro services. In an attempt to 
-aggregate power using a crowdsourced approach, Micro will enable users to run their own nodes that offer services 
-to anyone else they peer with. Each node will act as a gateway to the entire network, allowing the owner to benefit 
-financially from it's use.
+The power of collaborative development has been restricted to trusted environments within organisations. 
+These platforms unlock incredible productivity and compounding value with every new service added. 
+They provide an always-on runtime and known developer workflow for engineers to collaborate on. 
+This has been difficult to achieve outside of organisations.
+
+The Micro network solves this problem by creating a global shared services network. Micro will enable 
+users to run their own nodes that offer services to anyone else they peer with. Each node will act as 
+a gateway to the entire network, allowing the owner to benefit financially from it's use.
 
 ## Status
 
