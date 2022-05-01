@@ -21,6 +21,10 @@ The project is currently in the early design phase.
 
 To learn more see the [docs](docs).
 
+## Paper
+
+Read the [white paper](https://mu.network).
+
 ## Protocol
 
 See the [mucp](mucp) directory.
