@@ -61,19 +61,6 @@ Having tried many forms of funding in the past, it's clear we need complete alig
 participants from the get go is incredibly important. There must be total clarity on the motivations of those joining and how they 
 stand to benefit. The efforts of the project cannot be overshadowed by those seeking power law distributions.
 
-## Interface
-
-The Micro development model has been proven out over a number of years using the [Go](https://go.dev) based programming language and 
-supplementary client libraries which enable broad access to developers but mass appeal and consumption of services without programming will 
-require an entirely new approach.
-
-We propose the development of a client interface to compliment the development model which focuses on the end consumer. Where developers 
-and operators will focus on the infrastructure and programming, the client interface will enable anyone to access services via web or mobile. 
-Ideally using existing well known constructs like forms and messaging.
-
-A focus on delivering an end consumer facing experience keeps us from endlessly building software. 
-Ultimately the value of the network is in it's consumption, not just by developers, but by everyone.
-
 ## Architecture
 
 The network is globally distributed by design and based on existing open source technologies developed by Micro and others.
@@ -355,6 +342,34 @@ of the network and/or services on the network should be rewarded accordingly. Ou
 system into the network to provide this resource usage model via exchange of tokens for services.
 
 Here's a good explanation of [Token Economics](https://www.investinblockchain.com/token-economics/).
+
+## Interface
+
+The Micro development model has been proven out over a number of years using the [Go](https://go.dev) based programming language and 
+supplementary client libraries which enable broad access to developers but mass appeal and consumption of services without programming will 
+require an entirely new approach.
+
+We propose the development of a client interface to compliment the development model which focuses on the end consumer. Where developers 
+and operators will focus on the infrastructure and programming, the client interface will enable anyone to access services via web or mobile. 
+Ideally using existing well known constructs like forms and messaging.
+
+A focus on delivering an end consumer facing experience keeps us from endlessly building software. 
+Ultimately the value of the network is in it's consumption, not just by developers, but by everyone.
+
+## Summary
+
+The Micro network is an open global services network that enables anyone to participate in the exchange and use of digital services. It's 
+an entirely open source and free service to operate. Participation in which will result in creation of a new services economy directly 
+benefiting the owners and operators of the nodes on the network. We theorise the potential for global free trade, alleviation of world 
+poverty and the betterment of mankind. End users will be able to leverage all of these services in a familiar and easy to use messaging 
+or voice based interface. This is a system that does not yet exist in a free and open manner, it is still within the silos of global 
+tech incumbents and monopolistic regimes that continue to exploit humanity as a whole for their own monetary benefit.
+
+Micro has the potential to break us free of existing centralised technological platforms and enable the creation of a new entirely open 
+network that anyone can benefit from and be part of. It will leverage as much existing open source and web3 technology as possible to 
+build on the foundations of what has already been started.
+
+This endeavour will be a multi-year journey that will only start to show signs of life after the initial bootstrapping phase.
 
 ## Glossary of Terms
 
