@@ -12,6 +12,55 @@ Micro will enable users to run their own nodes that offer services to anyone els
 peer with. Each node will act as a gateway to the entire network, allowing the owner to benefit 
 financially from it's use.
 
+## Motivation
+
+The world is moving towards being driven entirely by technology. Part of that move involves shifting our experiences to digital rather than 
+physical services. In a world where everything is a service, we imagine there needs to be a system for interaction and model of development for 
+these services. What's more, there's an opportunity to provide an economic incentive to every human being to participate and benefit from 
+such a network.
+
+In our current world, the few dominate the many. The term FANG, has come to reference the global tech incumbents that rule our lives, our 
+digital footprint and more. They benefit financially from all our actions and deliver addictive systems that are impossible to break 
+free of. We have a chance to build a system in which these behaviours are removed, where the morals and ethics are coded into systems which 
+are openly and transparently available for all to see and use.
+
+## Mission
+
+The micro network's purpose is to create a truly open and free network for services that anyone can participate in and benefit from without 
+intermediaries, without abuse or exploitation, and without the purview of the current powers that be.
+
+As part of this endeavour, we are aware that the network will create significant amounts of financial liquidity for a number of people, including 
+those running services. Yet, there is another demographic of people who will not be so privileged, who will have no access and will not be 
+capable of participating directly. To those, we want to ensure they are maximally benefitting from this effort also. 
+
+2.5% of all profit flowing through the network will be donated to the least privileged by way of charitable donation.
+
+No system of any kind that can benefit mankind should be built without taking into consideration the least privileged of all, those without 
+access to even begin participating. We will ensure that whatever is built is not just benefiting the 1% but actually making a difference 
+through conscious effort.
+
+## Operations
+
+The network's ultimate goal is to be self governing, but the resources and people it takes to get to that place costs money. So 2.5% of all 
+profit will also go towards the network operations and ensuring it's continued success for the foreseeable future. This will include a 
+number of software engineers to maintain the code base, platform engineers to ensure the core backbone is running and some level of 
+financial and operational management. All will be governed through traditional legal entities until it makes sense not to do so.
+
+## Execution
+
+The network will start by implementing a working prototype of a gateway that can interconnect multiple Micro deployments across the globe 
+using the MUCP protocol. We'll then move onto the transactional layer for economic incentive and value exchange. This will likely reuse 
+existing cryptocurrency protocols rather than attempting to implement one from scratch. Once this is established, we'll start to invite 
+users to test the network before moving on to reputation based scoring and the client side interface for external consumption.
+
+Bootstrapping should take 18-24 months with a need to fund the project to get off the ground.
+
+## Funding
+
+Having tried many forms of funding in the past, it's clear we need complete alignment from those involved and so finding the right 
+participants from the get go is incredibly important. There must be total clarity on the motivations of those joining and how they 
+stand to benefit. The efforts of the project cannot be overshadowed by those seeking power law distributions.
+
 ## Architecture
 
 The network is globally distributed by design and based on existing open source technologies developed by Micro and others.
@@ -307,54 +356,20 @@ Ideally using existing well known constructs like forms and messaging.
 A focus on delivering an end consumer facing experience keeps us from endlessly building software. 
 Ultimately the value of the network is in it's consumption, not just by developers, but by everyone.
 
-## Motivation
+## Summary
 
-The world is moving towards being driven entirely by technology. Part of that move involves shifting our experiences to digital rather than 
-physical services. In a world where everything is a service, we imagine there needs to be a system for interaction and model of development for 
-these services. What's more, there's an opportunity to provide an economic incentive to every human being to participate and benefit from 
-such a network.
+The Micro network is an open global services network that enables anyone to participate in the exchange and use of digital services. It's 
+an entirely open source and free service to operate. Participation in which will result in creation of a new services economy directly 
+benefiting the owners and operators of the nodes on the network. We theorise the potential for global free trade, alleviation of world 
+poverty and the betterment of mankind. End users will be able to leverage all of these services in a familiar and easy to use messaging 
+or voice based interface. This is a system that does not yet exist in a free and open manner, it is still within the silos of global 
+tech incumbents and monopolistic regimes that continue to exploit humanity as a whole for their own monetary benefit.
 
-In our current world, the few dominate the many. The term FANG, has come to reference the global tech incumbents that rule our lives, our 
-digital footprint and more. They benefit financially from all our actions and deliver addictive systems that are impossible to break 
-free of. We have a chance to build a system in which these behaviours are removed, where the morals and ethics are coded into systems which 
-are openly and transparently available for all to see and use.
+Micro has the potential to break us free of existing centralised technological platforms and enable the creation of a new entirely open 
+network that anyone can benefit from and be part of. It will leverage as much existing open source and web3 technology as possible to 
+build on the foundations of what has already been started.
 
-## Mission
-
-The micro network's purpose is to create a truly open and free network for services that anyone can participate in and benefit from without 
-intermediaries, without abuse or exploitation, and without the purview of the current powers that be.
-
-As part of this endeavour, we are aware that the network will create significant amounts of financial liquidity for a number of people, including 
-those running services. Yet, there is another demographic of people who will not be so privileged, who will have no access and will not be 
-capable of participating directly. To those, we want to ensure they are maximally benefitting from this effort also. 
-
-2.5% of all profit flowing through the network will be donated to the least privileged by way of charitable donation.
-
-No system of any kind that can benefit mankind should be built without taking into consideration the least privileged of all, those without 
-access to even begin participating. We will ensure that whatever is built is not just benefiting the 1% but actually making a difference 
-through conscious effort.
-
-## Operations
-
-The network's ultimate goal is to be self governing, but the resources and people it takes to get to that place costs money. So 2.5% of all 
-profit will also go towards the network operations and ensuring it's continued success for the foreseeable future. This will include a 
-number of software engineers to maintain the code base, platform engineers to ensure the core backbone is running and some level of 
-financial and operational management. All will be governed through traditional legal entities until it makes sense not to do so.
-
-## Execution
-
-The network will start by implementing a working prototype of a gateway that can interconnect multiple Micro deployments across the globe 
-using the MUCP protocol. We'll then move onto the transactional layer for economic incentive and value exchange. This will likely reuse 
-existing cryptocurrency protocols rather than attempting to implement one from scratch. Once this is established, we'll start to invite 
-users to test the network before moving on to reputation based scoring and the client side interface for external consumption.
-
-Bootstrapping should take 18-24 months with a need to fund the project to get off the ground.
-
-## Funding
-
-Having tried many forms of funding in the past, it's clear we need complete alignment from those involved and so finding the right 
-participants from the get go is incredibly important. There must be total clarity on the motivations of those joining and how they 
-stand to benefit. The efforts of the project cannot be overshadowed by those seeking power law distributions.
+This endeavour will be a multi-year journey that will only start to show signs of life after the initial bootstrapping phase.
 
 ## Glossary of Terms
 
