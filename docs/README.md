@@ -360,10 +360,8 @@ Ultimately the value of the network is in it's consumption, not just by develope
 
 The Micro network is an open global services network that enables anyone to participate in the exchange and use of digital services. It's 
 an entirely open source and free service to operate. Participation in which will result in creation of a new services economy directly 
-benefiting the owners and operators of the nodes on the network. We theorise the potential for global free trade, alleviation of world 
-poverty and the betterment of mankind. End users will be able to leverage all of these services in a familiar and easy to use messaging 
-or voice based interface. This is a system that does not yet exist in a free and open manner, it is still within the silos of global 
-tech incumbents and monopolistic regimes that continue to exploit humanity as a whole for their own monetary benefit.
+benefiting the owners and operators of the nodes on the network. End users will be able to leverage all of these services in a familiar 
+and easy to use messaging or voice based interface. 
 
 Micro has the potential to break us free of existing centralised technological platforms and enable the creation of a new entirely open 
 network that anyone can benefit from and be part of. It will leverage as much existing open source and web3 technology as possible to 
