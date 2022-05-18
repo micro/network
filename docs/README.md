@@ -116,6 +116,14 @@ The identity system will likely be as follows
 - Layer 1 - the app providing a service to the network
 - Layer 2 - the reputation scoring based on node + service
 
+### Ownership
+
+Service ownership in a trustless environment is of utmost concern. Identifying not just by above mentioned systems but by also 
+using a crypto native method that is already in place. Each service will be prescribed an NFT that codifies it's digital 
+ownership on the blockchain. This ensures we can always track service owners and beneficiaries of those services. This also 
+means ownership is transferrable, so while node operators may initially run these services, others can then own and benefit 
+financially from them in the long run.
+
 ### Evolution
 
 No system in nature is static and so we should not expect any technical infrastructure or software to remain static. We believe
