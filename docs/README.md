@@ -375,6 +375,8 @@ Micro has the potential to break us free of existing centralised technological p
 network that anyone can benefit from and be part of. It will leverage as much existing open source and web3 technology as possible to 
 build on the foundations of what has already been started.
 
+## Updates
+
 If you're interested in learning more reach out or follow us on [Twitter](https://twitter.com/mudotxyz).
 
 ## Glossary of Terms
