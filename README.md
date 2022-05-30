@@ -13,10 +13,14 @@ development and services reuse at scale in a way not yet seen outside of large t
 
 The project is currently in the early design phase.
 
-## Docs
-
-To learn more see the [docs](docs).
-
 ## Protocol
 
-See the [mucp](mucp) directory.
+See the [PROTOCOL](PROTOCOL.md) doc for more info.
+
+## Implementation
+
+See the [mucp](mucp) directory for the Go implementation.
+
+## License
+
+Apache 2.0
