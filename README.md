@@ -4,14 +4,14 @@ An open protocol for Micro services.
 
 ## Overview
 
-The Micro network is a global shared services network. Micro will enable users to run their own nodes 
-that offer services to anyone else they peer with. Each node will act as a gateway to the entire network, 
-allowing the owner to benefit financially from it's use. The network has the potential to unlock collaborative 
-development and services reuse at scale in a way not yet seen outside of large tech companies.
+The Micro network is a protocol for communication between services across Micro deployments. 
+It enables distributed and federated clusters to be built across platform boundaries using 
+a header based protocol called MUCP. This can be used for cross region and cross org collaboration. 
+MUCP is inspired by the SMTP protocol.
 
 ## Status
 
-The project is currently in the early design phase.
+Currently in the early design phase.
 
 ## Protocol
 
