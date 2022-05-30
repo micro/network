@@ -4,6 +4,8 @@ On architecture and services
 
 ## Architecture
 
+Core components that will be required to operate
+
 - gateway - p2p network connectivity
 - exchange - token swap mechanism
 - vm - wasm virtual machine
