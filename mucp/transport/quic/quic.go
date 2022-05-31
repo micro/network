@@ -13,7 +13,7 @@ import (
 )
 
 type quicSocket struct {
-	s   quic.Session
+	s   quic.Connection
 	st  quic.Stream
 	enc *gob.Encoder
 	dec *gob.Decoder
