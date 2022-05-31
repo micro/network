@@ -20,7 +20,7 @@ jobs:
     - name: Get dependencies
       run: |
         cd mucp
-        go mod tidy && go mod install
+        go mod tidy && go mod download
 
     - name: Run tests
       id: tests
