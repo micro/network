@@ -1,4 +1,4 @@
-package network
+package mucp
 
 import (
 	pbNet "github.com/micro/network/mucp/network/proto"

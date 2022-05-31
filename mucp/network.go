@@ -1,5 +1,5 @@
-// Package network is for peering between micro networks
-package network
+// Package mucp is for the Micro services protocol
+package mucp
 
 import (
 	"time"
