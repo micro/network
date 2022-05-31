@@ -5,7 +5,7 @@ import (
 	"context"
 	"net"
 
-	"github.com/micro/network/mucp/network/resolver"
+	"github.com/micro/network/mucp/resolver"
 	"github.com/miekg/dns"
 )
 

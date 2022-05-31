@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/micro/network/mucp/network/resolver"
+	"github.com/micro/network/mucp/resolver"
 )
 
 // Resolver is a HTTP network resolver

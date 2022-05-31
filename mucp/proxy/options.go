@@ -3,7 +3,7 @@ package proxy
 
 import (
 	"github.com/micro/network/mucp/client"
-	"github.com/micro/network/mucp/network/router"
+	"github.com/micro/network/mucp/router"
 )
 
 type Options struct {

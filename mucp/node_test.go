@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/micro/network/mucp/network/proto"
+	pb "github.com/micro/network/mucp/proto"
 )
 
 var (

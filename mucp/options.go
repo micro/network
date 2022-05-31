@@ -2,12 +2,12 @@ package mucp
 
 import (
 	"github.com/google/uuid"
-	"github.com/micro/network/mucp/network/proxy"
-	"github.com/micro/network/mucp/network/proxy/mucp"
-	"github.com/micro/network/mucp/network/resolver"
-	"github.com/micro/network/mucp/network/resolver/registry"
-	"github.com/micro/network/mucp/network/router"
-	"github.com/micro/network/mucp/network/tunnel"
+	"github.com/micro/network/mucp/proxy"
+	"github.com/micro/network/mucp/proxy/mucp"
+	"github.com/micro/network/mucp/resolver"
+	"github.com/micro/network/mucp/resolver/registry"
+	"github.com/micro/network/mucp/router"
+	"github.com/micro/network/mucp/tunnel"
 )
 
 type Option func(*Options)

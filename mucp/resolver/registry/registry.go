@@ -2,7 +2,7 @@
 package registry
 
 import (
-	"github.com/micro/network/mucp/network/resolver"
+	"github.com/micro/network/mucp/resolver"
 	"github.com/micro/network/mucp/registry"
 )
 

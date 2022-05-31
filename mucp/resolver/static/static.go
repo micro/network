@@ -2,7 +2,7 @@
 package registry
 
 import (
-	"github.com/micro/network/mucp/network/resolver"
+	"github.com/micro/network/mucp/resolver"
 )
 
 // Resolver returns a static list of nodes. In the event the node list
