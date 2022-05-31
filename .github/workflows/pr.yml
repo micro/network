@@ -19,10 +19,11 @@ jobs:
 
     - name: Get dependencies
       run: |
-        go install -v -t -d ./...
+        cd mucp
+        go mod tidy && go mod install
 
     - name: Run tests
       id: tests
       env:
         IN_TRAVIS_CI: yes
-      run: go test -v ./...
+      run: cd mucp && go test -v ./...
