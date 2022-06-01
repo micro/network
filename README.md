@@ -20,7 +20,7 @@ See the [PROTOCOL](PROTOCOL.md) doc for more info.
 
 ## Implementation
 
-See the [mucp](mucp) directory for the Go implementation.
+See the [mucp](mucp) directory for the Go prototype implementation.
 
 ## License
 
