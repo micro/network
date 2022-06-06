@@ -129,3 +129,29 @@ We are looking at optional extra headers for routing
 - `Micro-Channel` or `Micro-Queue` to specify a specific queue to segregate by.
 - `Micro-Method` to indicate a request, response, stream or message
 - `Micro-Event` defines the type of event sent to a topic
+
+## Methods
+
+Methods are the actions which can be taken. Much like HTTP GET, POST, PUT, PATCH, DELETE.
+
+All methods are transported as the `Micro-Method` header.
+
+### List of methods
+
+- Connect - Connect to the network
+- Close - Disconnect from the network
+- Route - Advertise known routes
+- Call - Make a request
+- Stream - Create a stream
+- Publish - Broadcast a message
+- Subscribe - Subscribe to messages
+- Keepalive - Heartbeat with peers
+- Discover - Ask for a route to a service
+- Send - Make a payment
+- Receive - Receive a payment
+- Listen - Start accepting messages
+- Announce - Broadcast an announcement
+- Ban - Ban a node or service
+- Block - Drop messages
+- Event - Observed events
+
