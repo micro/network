@@ -123,9 +123,9 @@ Supported headers in the protocol (all prefixed with `Micro-`
 - Id
 - Stream
 
-### In Progress
+### Details
 
-We are looking at optional extra headers for routing
+Further info on headers
 
 - `Micro-Protocol` to specify the protocol for the endpoint. 
 - `Micro-Stream` to segregate streams on the same connection.
