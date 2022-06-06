@@ -112,14 +112,6 @@ In the event you want to subscribe to a topic you must specify a queue.
 }
 ```
 
-## Discovery
-
-Service and topic discovery is a non concern for the time being. Internally our implementation of micro supports multicast DNS, gossip and consul. We believe 
-in closed networks users should have the choice to use whatever is a preference for their architectures. The [mucp](https://github.com/micro/network/tree/main/mucp) 
-directory is the location for our default implementation. 
-
-In regard to discovery across the public internet. We believe networks should be served via DNS SRV records. 
-
 ## Headers
 
 Supported headers in the protocol (all prefixed with `Micro-`
@@ -169,3 +161,10 @@ All methods are transported as the `Micro-Method` header.
 - Block - Drop messages
 - Event - Observed events
 
+## Discovery
+
+Service and topic discovery is a non concern for the time being. Internally our implementation of micro supports multicast DNS, gossip and consul. We believe 
+in closed networks users should have the choice to use whatever is a preference for their architectures. The [mucp](https://github.com/micro/network/tree/main/mucp) 
+directory is the location for our default implementation. 
+
+In regard to discovery across the public internet. We believe networks should be served via DNS SRV records. 
