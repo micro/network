@@ -120,7 +120,21 @@ directory is the location for our default implementation.
 
 In regard to discovery across the public internet. We believe networks should be served via DNS SRV records. 
 
-## In Progress
+## Headers
+
+Supported headers in the protocol (all prefixed with `Micro-`
+
+- Service
+- Method
+- Endpoint
+- Network
+- Topic
+- Event
+- Queue
+- Id
+- Stream
+
+### In Progress
 
 We are looking at optional extra headers for routing
 
