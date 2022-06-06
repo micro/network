@@ -14,7 +14,6 @@ Ideally client should be implemented using the micro proxy http interface to sta
 
 - [Protocol](#protocol)
 - [Discovery](#discovery)
-- [In Progress](#in-progress)
 
 ## Protocol
 
