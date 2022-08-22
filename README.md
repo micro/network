@@ -1,6 +1,6 @@
 # Micro Network
 
-An open network for Micro services.
+An open protocol for Micro services.
 
 ## Overview
 
