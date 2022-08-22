@@ -4,11 +4,10 @@ An open protocol for Micro services.
 
 ## Overview
 
-The Micro network is a protocol for communication between services across Micro servers. 
+The Micro network is a protocol for communication between services. 
 It enables distributed and federated clusters to be built over platform boundaries using 
 a header based transport called MUCP. The protocol behaves much like SMTP, allowing gateways 
-to relay messages beyond a single domain to create a network of networks. Using the same approach 
-for services should unlock cross cloud and cross org collaboration.
+to relay messages beyond a single domain to create a network of networks. 
 
 ## Status
 
