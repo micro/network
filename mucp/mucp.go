@@ -31,9 +31,9 @@ import (
 
 var (
 	// NetworkChannel is the name of the tunnel channel for passing network messages
-	NetworkChannel = "network"
+	NetworkChannel = "net"
 	// ControlChannel is the name of the tunnel channel for passing control message
-	ControlChannel = "control"
+	ControlChannel = "ctrl"
 	// DefaultLink is default network link
 	DefaultLink = "network"
 	// MaxConnections is the max number of network client connections
