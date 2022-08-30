@@ -64,10 +64,6 @@ func newOptions(opt ...Option) Options {
 		opts.Registry = registry.DefaultRegistry
 	}
 
-	if opts.Transport == nil {
-		opts.Transport = transport.DefaultTransport
-	}
-
 	if opts.RegisterCheck == nil {
 		opts.RegisterCheck = DefaultRegisterCheck
 	}
@@ -196,18 +192,6 @@ func TLSConfig(t *tls.Config) Option {
 	return func(o *Options) {
 		// set the internal tls
 		o.TLSConfig = t
-
-		// set the default transport if one is not
-		// already set. Required for Init call below.
-		if o.Transport == nil {
-			o.Transport = transport.DefaultTransport
-		}
-
-		// set the transport tls
-		o.Transport.Init(
-			transport.Secure(true),
-			transport.TLSConfig(t),
-		)
 	}
 }
 

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/micro/network/mucp/metadata"
+	"github.com/micro/network/mucp/util/metadata"
 )
 
 func TestCache(t *testing.T) {

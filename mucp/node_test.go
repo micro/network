@@ -20,7 +20,7 @@ func testSetup() *node {
 		id:      testNodeId,
 		address: testNodeAddress,
 		peers:   make(map[string]*node),
-		network: newNetwork(Name(testNodeNetName)),
+		network: NewNetwork(Name(testNodeNetName)),
 		status:  newStatus(),
 	}
 
@@ -81,7 +81,7 @@ func TestNodes(t *testing.T) {
 		id:      testNodeId,
 		address: testNodeAddress,
 		peers:   make(map[string]*node),
-		network: newNetwork(Name(testNodeNetName)),
+		network: NewNetwork(Name(testNodeNetName)),
 	}
 	// get all the nodes including yourself
 	nodes := single.Nodes()
@@ -150,7 +150,7 @@ func TestPeers(t *testing.T) {
 		id:      testNodeId,
 		address: testNodeAddress,
 		peers:   make(map[string]*node),
-		network: newNetwork(Name(testNodeNetName)),
+		network: NewNetwork(Name(testNodeNetName)),
 	}
 	// get node peers
 	peers := single.Peers()
@@ -338,7 +338,7 @@ func TestPeersToProto(t *testing.T) {
 		id:      testNodeId,
 		address: testNodeAddress,
 		peers:   make(map[string]*node),
-		network: newNetwork(Name(testNodeNetName)),
+		network: NewNetwork(Name(testNodeNetName)),
 		status:  newStatus(),
 	}
 	topCount := 0

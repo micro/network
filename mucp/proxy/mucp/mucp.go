@@ -15,11 +15,11 @@ import (
 	"github.com/micro/network/mucp/codec/bytes"
 	"github.com/micro/network/mucp/errors"
 	"github.com/micro/network/mucp/logger"
-	"github.com/micro/network/mucp/metadata"
 	"github.com/micro/network/mucp/proxy"
 	"github.com/micro/network/mucp/router"
 	"github.com/micro/network/mucp/selector"
 	"github.com/micro/network/mucp/server"
+	"github.com/micro/network/mucp/util/metadata"
 )
 
 // Proxy will transparently proxy requests to an endpoint.

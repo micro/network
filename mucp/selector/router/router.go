@@ -6,8 +6,8 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/micro/network/mucp/router"
 	"github.com/micro/network/mucp/registry"
+	"github.com/micro/network/mucp/router"
 	"github.com/micro/network/mucp/selector"
 )
 

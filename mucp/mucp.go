@@ -13,27 +13,25 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	"github.com/micro/network/mucp/client"
-	cmucp "github.com/micro/network/mucp/client/mucp"
 	"github.com/micro/network/mucp/logger"
 	pbNet "github.com/micro/network/mucp/proto"
 	"github.com/micro/network/mucp/proxy"
 	"github.com/micro/network/mucp/resolver/dns"
 	"github.com/micro/network/mucp/router"
+	rtr "github.com/micro/network/mucp/selector/router"
+	"github.com/micro/network/mucp/server"
+	"github.com/micro/network/mucp/transport"
 	"github.com/micro/network/mucp/tunnel"
 	bun "github.com/micro/network/mucp/tunnel/broker"
 	tun "github.com/micro/network/mucp/tunnel/transport"
-	rtr "github.com/micro/network/mucp/selector/router"
-	"github.com/micro/network/mucp/server"
-	smucp "github.com/micro/network/mucp/server/mucp"
-	"github.com/micro/network/mucp/transport"
 	"github.com/micro/network/mucp/util/backoff"
 )
 
 var (
 	// NetworkChannel is the name of the tunnel channel for passing network messages
-	NetworkChannel = "network"
+	NetworkChannel = "net"
 	// ControlChannel is the name of the tunnel channel for passing control message
-	ControlChannel = "control"
+	ControlChannel = "ctrl"
 	// DefaultLink is default network link
 	DefaultLink = "network"
 	// MaxConnections is the max number of network client connections
@@ -51,8 +49,26 @@ var (
 	ErrPeerMaxExceeded = errors.New("peer max errors exceeded")
 )
 
-// network implements Network interface
-type network struct {
+var (
+	// DefaultName is default network name
+	DefaultName = "micro"
+	// DefaultAddress is default network address
+	DefaultAddress = ":0"
+	// ResolveTime defines time interval to periodically resolve network nodes
+	ResolveTime = 1 * time.Minute
+	// AnnounceTime defines time interval to periodically announce node neighbours
+	AnnounceTime = 1 * time.Second
+	// KeepAliveTime is the time in which we want to have sent a message to a peer
+	KeepAliveTime = 30 * time.Second
+	// SyncTime is the time a network node requests full sync from the network
+	SyncTime = 1 * time.Minute
+	// PruneTime defines time interval to periodically check nodes that need to be pruned
+	// due to their not announcing their presence within this time interval
+	PruneTime = 90 * time.Second
+)
+
+// Network implements the MUCP protocol
+type Network struct {
 	// node is network node
 	*node
 	// options configure the network
@@ -80,6 +96,34 @@ type network struct {
 	closed chan bool
 	// whether we've discovered by the network
 	discovered chan bool
+}
+
+// Error is network node errors
+type Error interface {
+	// Count is current count of errors
+	Count() int
+	// Msg is last error message
+	Msg() string
+}
+
+// Status is node status
+type Status interface {
+	// Error reports error status
+	Error() Error
+}
+
+// Node is network node
+type Node interface {
+	// Id is node id
+	Id() string
+	// Address is node bind address
+	Address() string
+	// Peers returns node peers
+	Peers() []Node
+	// Network is the network node is in
+	Network() *Network
+	// Status returns node status
+	Status() Status
 }
 
 // message is network message
@@ -116,8 +160,8 @@ func protoToRoute(route *pbNet.Route) router.Route {
 	}
 }
 
-// newNetwork returns a new network node
-func newNetwork(opts ...Option) Network {
+// NewNetwork returns a new network node
+func NewNetwork(opts ...Option) *Network {
 	// create default options
 	options := DefaultOptions()
 	// initialize network options
@@ -164,7 +208,7 @@ func newNetwork(opts ...Option) Network {
 	)
 
 	// server is network server
-	server := smucp.NewServer(
+	server := server.NewServer(
 		server.Id(options.Id),
 		server.Address(peerAddress),
 		server.Advertise(advertise),
@@ -174,7 +218,7 @@ func newNetwork(opts ...Option) Network {
 	)
 
 	// client is network client
-	client := cmucp.NewClient(
+	client := client.NewClient(
 		client.Broker(tunBroker),
 		client.Transport(tunTransport),
 		client.Selector(
@@ -184,7 +228,7 @@ func newNetwork(opts ...Option) Network {
 		),
 	)
 
-	network := &network{
+	network := &Network{
 		node: &node{
 			id:      options.Id,
 			address: peerAddress,
@@ -207,30 +251,8 @@ func newNetwork(opts ...Option) Network {
 	return network
 }
 
-func (n *network) Init(opts ...Option) error {
-	n.Lock()
-	defer n.Unlock()
-
-	// TODO: maybe only allow reinit of certain opts
-	for _, o := range opts {
-		o(&n.options)
-	}
-
-	return nil
-}
-
-// Options returns network options
-func (n *network) Options() Options {
-	n.RLock()
-	defer n.RUnlock()
-
-	options := n.options
-
-	return options
-}
-
 // Name returns network name
-func (n *network) Name() string {
+func (n *Network) Name() string {
 	n.RLock()
 	defer n.RUnlock()
 
@@ -240,7 +262,7 @@ func (n *network) Name() string {
 }
 
 // acceptNetConn accepts connections from NetworkChannel
-func (n *network) acceptNetConn(l tunnel.Listener, recv chan *message) {
+func (n *Network) acceptNetConn(l tunnel.Listener, recv chan *message) {
 	var i int
 	for {
 		// accept a connection
@@ -267,7 +289,7 @@ func (n *network) acceptNetConn(l tunnel.Listener, recv chan *message) {
 }
 
 // acceptCtrlConn accepts connections from ControlChannel
-func (n *network) acceptCtrlConn(l tunnel.Listener, recv chan *message) {
+func (n *Network) acceptCtrlConn(l tunnel.Listener, recv chan *message) {
 	var i int
 	for {
 		// accept a connection
@@ -298,7 +320,7 @@ func (n *network) acceptCtrlConn(l tunnel.Listener, recv chan *message) {
 }
 
 // maskRoute will mask the route so that we apply the right values
-func (n *network) maskRoute(r *pbNet.Route) {
+func (n *Network) maskRoute(r *pbNet.Route) {
 	hasher := fnv.New64()
 	// the routes service address
 	address := r.Address
@@ -326,7 +348,7 @@ func (n *network) maskRoute(r *pbNet.Route) {
 }
 
 // advertise advertises routes to the network
-func (n *network) advertise(advertChan <-chan *router.Advert) {
+func (n *Network) advertise(advertChan <-chan *router.Advert) {
 	rnd := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for {
 		select {
@@ -396,7 +418,7 @@ func (n *network) advertise(advertChan <-chan *router.Advert) {
 }
 
 // initNodes initializes tunnel with a list of resolved nodes
-func (n *network) initNodes(startup bool) {
+func (n *Network) initNodes(startup bool) {
 	nodes, err := n.resolveNodes()
 	// NOTE: this condition never fires
 	// as resolveNodes() never returns error
@@ -433,7 +455,7 @@ func (n *network) initNodes(startup bool) {
 }
 
 // resolveNodes resolves network nodes to addresses
-func (n *network) resolveNodes() ([]string, error) {
+func (n *Network) resolveNodes() ([]string, error) {
 	// resolve the network address to network nodes
 	records, err := n.options.Resolver.Resolve(n.options.Name)
 	if err != nil {
@@ -498,7 +520,7 @@ func (n *network) resolveNodes() ([]string, error) {
 }
 
 // handleNetConn handles network announcement messages
-func (n *network) handleNetConn(s tunnel.Session, msg chan *message) {
+func (n *Network) handleNetConn(s tunnel.Session, msg chan *message) {
 	for {
 		m := new(transport.Message)
 		if err := s.Recv(m); err != nil {
@@ -533,7 +555,7 @@ func (n *network) handleNetConn(s tunnel.Session, msg chan *message) {
 }
 
 // handleCtrlConn handles ControlChannel connections
-func (n *network) handleCtrlConn(s tunnel.Session, msg chan *message) {
+func (n *Network) handleCtrlConn(s tunnel.Session, msg chan *message) {
 	for {
 		m := new(transport.Message)
 		if err := s.Recv(m); err != nil {
@@ -573,7 +595,7 @@ func (n *network) handleCtrlConn(s tunnel.Session, msg chan *message) {
 // - Routes with ID of adjacent nodes have hop count 10
 // - Routes by peers of the advertiser have hop count 100
 // - Routes beyond node neighbourhood have hop count 1000
-func (n *network) getHopCount(rtr string) int {
+func (n *Network) getHopCount(rtr string) int {
 	// make sure node.peers are not modified
 	n.node.RLock()
 	defer n.node.RUnlock()
@@ -602,7 +624,7 @@ func (n *network) getHopCount(rtr string) int {
 
 // getRouteMetric calculates router metric and returns it
 // Route metric is calculated based on link status and route hopd count
-func (n *network) getRouteMetric(router string, gateway string, link string) int64 {
+func (n *Network) getRouteMetric(router string, gateway string, link string) int64 {
 	// set the route metric
 	n.RLock()
 	defer n.RUnlock()
@@ -657,7 +679,7 @@ func (n *network) getRouteMetric(router string, gateway string, link string) int
 }
 
 // processCtrlChan processes messages received on ControlChannel
-func (n *network) processCtrlChan(listener tunnel.Listener) {
+func (n *Network) processCtrlChan(listener tunnel.Listener) {
 	defer listener.Close()
 
 	// receive control message queue
@@ -787,7 +809,7 @@ func (n *network) processCtrlChan(listener tunnel.Listener) {
 }
 
 // processNetChan processes messages received on NetworkChannel
-func (n *network) processNetChan(listener tunnel.Listener) {
+func (n *Network) processNetChan(listener tunnel.Listener) {
 	defer listener.Close()
 
 	// receive network message queue
@@ -1157,7 +1179,7 @@ func (n *network) processNetChan(listener tunnel.Listener) {
 }
 
 // pruneRoutes prunes routes return by given query
-func (n *network) pruneRoutes(q ...router.QueryOption) error {
+func (n *Network) pruneRoutes(q ...router.QueryOption) error {
 	routes, err := n.router.Table().Query(q...)
 	if err != nil && err != router.ErrRouteNotFound {
 		return err
@@ -1173,7 +1195,7 @@ func (n *network) pruneRoutes(q ...router.QueryOption) error {
 }
 
 // pruneNodeRoutes prunes routes that were either originated by or routable via given node
-func (n *network) prunePeerRoutes(peer *node) error {
+func (n *Network) prunePeerRoutes(peer *node) error {
 	// lookup all routes originated by router
 	q := []router.QueryOption{
 		router.QueryRouter(peer.id),
@@ -1196,7 +1218,7 @@ func (n *network) prunePeerRoutes(peer *node) error {
 // manage the process of announcing to peers and prune any peer nodes that have not been
 // seen for a period of time. Also removes all the routes either originated by or routable
 // by the stale nodes. it also resolves nodes periodically and adds them to the tunnel
-func (n *network) manage() {
+func (n *Network) manage() {
 	rnd := rand.New(rand.NewSource(time.Now().UnixNano()))
 	announce := time.NewTicker(AnnounceTime)
 	defer announce.Stop()
@@ -1419,7 +1441,7 @@ func (n *network) manage() {
 // getAdvertProtoRoutes returns a list of routes to advertise to remote peer
 // based on the advertisement strategy encoded in protobuf
 // It returns error if the routes failed to be retrieved from the routing table
-func (n *network) getProtoRoutes() ([]*pbNet.Route, error) {
+func (n *Network) getProtoRoutes() ([]*pbNet.Route, error) {
 	// get a list of the best routes for each service in our routing table
 	q := []router.QueryOption{
 		router.QueryStrategy(n.router.Options().Advertise),
@@ -1444,7 +1466,7 @@ func (n *network) getProtoRoutes() ([]*pbNet.Route, error) {
 	return pbRoutes, nil
 }
 
-func (n *network) sendConnect() {
+func (n *Network) sendConnect() {
 	// send connect message to NetworkChannel
 	// NOTE: in theory we could do this as soon as
 	// Dial to NetworkChannel succeeds, but instead
@@ -1466,7 +1488,7 @@ func (n *network) sendConnect() {
 // sendTo sends a message to a specific node as a one off.
 // we need this because when links die, we have no discovery info,
 // and sending to an existing multicast link doesn't immediately work
-func (n *network) sendTo(method, channel string, peer *node, msg proto.Message) error {
+func (n *Network) sendTo(method, channel string, peer *node, msg proto.Message) error {
 	body, err := proto.Marshal(msg)
 	if err != nil {
 		return err
@@ -1538,7 +1560,7 @@ func (n *network) sendTo(method, channel string, peer *node, msg proto.Message) 
 }
 
 // sendMsg sends a message to the tunnel channel
-func (n *network) sendMsg(method, channel string, msg proto.Message) error {
+func (n *Network) sendMsg(method, channel string, msg proto.Message) error {
 	body, err := proto.Marshal(msg)
 	if err != nil {
 		return err
@@ -1566,7 +1588,7 @@ func (n *network) sendMsg(method, channel string, msg proto.Message) error {
 }
 
 // updatePeerLinks updates link for a given peer
-func (n *network) updatePeerLinks(peer *node) error {
+func (n *Network) updatePeerLinks(peer *node) error {
 	n.Lock()
 	defer n.Unlock()
 
@@ -1611,7 +1633,7 @@ func (n *network) updatePeerLinks(peer *node) error {
 }
 
 // isLoopback checks if a link is a loopback to ourselves
-func (n *network) isLoopback(link tunnel.Link) bool {
+func (n *Network) isLoopback(link tunnel.Link) bool {
 	// skip loopback
 	if link.Loopback() {
 		return true
@@ -1635,7 +1657,7 @@ func (n *network) isLoopback(link tunnel.Link) bool {
 // message. We're trying to ensure convergence pretty quickly. So we want
 // to hear back. In the case we become completely disconnected we'll
 // connect again once a new link is established
-func (n *network) connect() {
+func (n *Network) connect() {
 	// discovered lets us know what we received a peer message back
 	var discovered bool
 	var attempts int
@@ -1700,7 +1722,7 @@ func (n *network) connect() {
 }
 
 // Connect connects the network
-func (n *network) Connect() error {
+func (n *Network) Connect() error {
 	n.Lock()
 	defer n.Unlock()
 
@@ -1803,7 +1825,7 @@ func (n *network) Connect() error {
 	return nil
 }
 
-func (n *network) close() error {
+func (n *Network) close() error {
 	// stop the server
 	if err := n.server.Stop(); err != nil {
 		return err
@@ -1823,7 +1845,7 @@ func (n *network) close() error {
 }
 
 // createClients is used to create new clients in the event we lose all the tunnels
-func (n *network) createClients() error {
+func (n *Network) createClients() error {
 	// dial into ControlChannel to send route adverts
 	ctrlClient, err := n.tunnel.Dial(ControlChannel, tunnel.DialMode(tunnel.Multicast))
 	if err != nil {
@@ -1857,7 +1879,7 @@ func (n *network) createClients() error {
 }
 
 // Close closes network connection
-func (n *network) Close() error {
+func (n *Network) Close() error {
 	n.Lock()
 
 	if !n.connected {
@@ -1897,11 +1919,11 @@ func (n *network) Close() error {
 }
 
 // Client returns network client
-func (n *network) Client() client.Client {
+func (n *Network) Client() client.Client {
 	return n.client
 }
 
 // Server returns network server
-func (n *network) Server() server.Server {
+func (n *Network) Server() server.Server {
 	return n.server
 }
