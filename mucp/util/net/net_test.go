@@ -19,11 +19,6 @@ func TestListen(t *testing.T) {
 		}
 		defer l.Close()
 	}
-
-	// TODO nats case test
-	// natsAddr := "_INBOX.bID2CMRvlNp0vt4tgNBHWf"
-	// Expect addr DO NOT has extra ":" at the end!
-
 }
 
 // TestProxyEnv checks whether we have proxy/network settings in env

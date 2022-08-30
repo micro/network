@@ -7,7 +7,6 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/lucas-clemente/quic-go v0.27.1
 	github.com/miekg/dns v1.1.43
-	github.com/nats-io/nats.go v1.13.1-0.20211018182449-f2416a8b1483
 	github.com/oxtoacart/bpool v0.0.0-20190530202638-03653db5a59c
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
@@ -24,9 +23,6 @@ require (
 	github.com/marten-seemann/qtls-go1-16 v0.1.5 // indirect
 	github.com/marten-seemann/qtls-go1-17 v0.1.1 // indirect
 	github.com/marten-seemann/qtls-go1-18 v0.1.1 // indirect
-	github.com/nats-io/nats-server/v2 v2.6.4 // indirect
-	github.com/nats-io/nkeys v0.3.0 // indirect
-	github.com/nats-io/nuid v1.0.1 // indirect
 	github.com/nxadm/tail v1.4.8 // indirect
 	github.com/onsi/ginkgo v1.16.4 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect

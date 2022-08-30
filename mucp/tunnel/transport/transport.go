@@ -4,8 +4,8 @@ package transport
 import (
 	"context"
 
-	"github.com/micro/network/mucp/tunnel"
 	"github.com/micro/network/mucp/transport"
+	"github.com/micro/network/mucp/tunnel"
 )
 
 type tunTransport struct {

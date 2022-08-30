@@ -2,8 +2,8 @@
 package registry
 
 import (
-	"github.com/micro/network/mucp/resolver"
 	"github.com/micro/network/mucp/registry"
+	"github.com/micro/network/mucp/resolver"
 )
 
 // Resolver is a registry network resolver

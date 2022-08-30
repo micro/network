@@ -110,7 +110,7 @@ type node struct {
 	// peers are nodes with direct link to this node
 	peers map[string]*node
 	// network returns the node network
-	network Network
+	network *Network
 	// lastSeen keeps track of node lifetime and updates
 	lastSeen time.Time
 	// lastSync keeps track of node last sync request
@@ -130,7 +130,7 @@ func (n *node) Address() string {
 }
 
 // Network returns node network
-func (n *node) Network() Network {
+func (n *node) Network() *Network {
 	return n.network
 }
 
