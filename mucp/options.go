@@ -5,7 +5,6 @@ import (
 	"github.com/micro/network/mucp/proxy"
 	"github.com/micro/network/mucp/proxy/mucp"
 	"github.com/micro/network/mucp/resolver"
-	"github.com/micro/network/mucp/resolver/registry"
 	"github.com/micro/network/mucp/router"
 	"github.com/micro/network/mucp/tunnel"
 )
@@ -106,6 +105,5 @@ func DefaultOptions() Options {
 		Tunnel:   tunnel.NewTunnel(),
 		Router:   router.DefaultRouter,
 		Proxy:    mucp.NewProxy(),
-		Resolver: &registry.Resolver{},
 	}
 }

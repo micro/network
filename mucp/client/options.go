@@ -112,7 +112,6 @@ func NewOptions(options ...Option) Options {
 		Broker:    broker.DefaultBroker,
 		Selector:  selector.DefaultSelector,
 		Registry:  registry.DefaultRegistry,
-		Transport: transport.DefaultTransport,
 	}
 
 	for _, o := range options {
