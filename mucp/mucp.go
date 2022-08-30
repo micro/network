@@ -13,7 +13,6 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	"github.com/micro/network/mucp/client"
-	cmucp "github.com/micro/network/mucp/client/mucp"
 	"github.com/micro/network/mucp/logger"
 	pbNet "github.com/micro/network/mucp/proto"
 	"github.com/micro/network/mucp/proxy"
@@ -21,7 +20,6 @@ import (
 	"github.com/micro/network/mucp/router"
 	rtr "github.com/micro/network/mucp/selector/router"
 	"github.com/micro/network/mucp/server"
-	smucp "github.com/micro/network/mucp/server/mucp"
 	"github.com/micro/network/mucp/transport"
 	"github.com/micro/network/mucp/tunnel"
 	bun "github.com/micro/network/mucp/tunnel/broker"
@@ -210,7 +208,7 @@ func NewNetwork(opts ...Option) *Network {
 	)
 
 	// server is network server
-	server := smucp.NewServer(
+	server := server.NewServer(
 		server.Id(options.Id),
 		server.Address(peerAddress),
 		server.Advertise(advertise),
@@ -220,7 +218,7 @@ func NewNetwork(opts ...Option) *Network {
 	)
 
 	// client is network client
-	client := cmucp.NewClient(
+	client := client.NewClient(
 		client.Broker(tunBroker),
 		client.Transport(tunTransport),
 		client.Selector(

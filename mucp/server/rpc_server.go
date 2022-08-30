@@ -16,11 +16,11 @@ import (
 	"github.com/micro/network/mucp/codec"
 	raw "github.com/micro/network/mucp/codec/bytes"
 	"github.com/micro/network/mucp/logger"
-	"github.com/micro/network/mucp/metadata"
 	"github.com/micro/network/mucp/registry"
 	"github.com/micro/network/mucp/transport"
 	"github.com/micro/network/mucp/util/addr"
 	"github.com/micro/network/mucp/util/backoff"
+	"github.com/micro/network/mucp/util/metadata"
 	mnet "github.com/micro/network/mucp/util/net"
 	"github.com/micro/network/mucp/util/socket"
 )

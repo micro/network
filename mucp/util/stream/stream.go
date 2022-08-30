@@ -7,8 +7,8 @@ import (
 
 	"github.com/micro/network/mucp/client"
 	"github.com/micro/network/mucp/codec"
-	"github.com/micro/network/mucp/metadata"
 	"github.com/micro/network/mucp/server"
+	"github.com/micro/network/mucp/util/metadata"
 )
 
 type Stream interface {

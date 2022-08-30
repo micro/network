@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/micro/network/mucp/metadata"
 	"github.com/micro/network/mucp/registry"
 	"github.com/micro/network/mucp/selector"
+	"github.com/micro/network/mucp/util/metadata"
 )
 
 // Write sets the status and body on a http ResponseWriter
