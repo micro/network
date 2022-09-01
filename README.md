@@ -17,10 +17,6 @@ Currently in the early design phase.
 
 See the [PROTOCOL](PROTOCOL.md) doc for more info.
 
-## Implementation
-
-See the [mucp](mucp) directory for the Go prototype implementation.
-
 ## License
 
 Apache 2.0
