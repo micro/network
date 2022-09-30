@@ -22,13 +22,13 @@ but the protocol should scan for a starting json delimiter `{` to know whether t
 
 The protocol covers 3 forms of communication: 
 
-- [Request](#request) - Sending a request and synchronously receiving a response
+- [Call](#call) - Sending a request and synchronously receiving a response
 - [Stream](#stream) - Maintaining an open connection over which messages are passed back and forth
 - [Publish](#publish) - Asynchronously broadcast events to topics with multiple interested parties
 
-### Request
+### Call
 
-Request/Response communication allows a single request to be sent and a response to be received. The request and response 
+Request/Response communication allows a single request call to be sent and a response to be received. The request and response 
 are of identical format to correlate one to one mapping. A request should be passed with a unique id, name of the service, 
 the endpoint being called and the content-type. 
 
