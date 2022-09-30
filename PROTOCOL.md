@@ -157,3 +157,17 @@ All methods are transported as the `Micro-Method` header.
 - Ban - Ban a node or service
 - Block - Drop messages
 - Event - Observed events
+
+## Discovery
+
+Discovery encompasses two parts, the first is the discovery of servers which implement the MUCP protocol. This we believe 
+should be done via DNS SRV records, more details to be provided on the format in future. The second is the discovery of 
+services provided by those servers. This will involve advertising a catalog of services between servers baked into the 
+MUCP protocol itself. While Micro bakes in a registry, it's not clear that we want to advertise all services within it.
+
+## Transport
+
+MUCP is a transport agnostic protocol meaning it could be implemented on top of HTTP, TCP, UDP or something entirely different. 
+In the first instance we think the most obvious choice is to implement the protocol on top of HTTP since 80/443 are universally 
+open and available but also because of how well known HTTP is. Beyond this there's some discussion around whether transports 
+should be part of a secure network using Wireguard or similar. We will discuss this further before sharing more details.
