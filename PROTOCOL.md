@@ -6,7 +6,7 @@ Specification for the **Micro Communication Protocol** (MUCP).
 
 The Micro Communication Protocol is a simple design specification for how Micro services sends and receives messages over any transport. 
 Our intention is to define an open protocol for service to service communication on top of any system. This also provides us the ability 
-to simplify the creation of clients and servers which accept micro based requests. 
+to simplify the creation of clients and servers which accept Micro based requests. 
 
 ## Contents
 
