@@ -5,11 +5,12 @@ package mucp;
 option go_package = "./proto;mucp";
 
 service Network {
-	rpc Call(CallRequest) returns (CallResponse) {}
-	rpc Stream(StreamRequest) returns (stream Message) {}
-	rpc Publish(PublishRequest) returns (PublishResponse) {}
+	rpc Call(Request) returns (Response) {}
+	rpc Stream(stream Request) returns (stream Response) {}
+	rpc Publish(Event) returns (Status) {}
 }
 
+// Envelope for message encoding
 message Message {
 	// map of message headers
 	map<string,string> header = 1;
@@ -17,7 +18,7 @@ message Message {
 	bytes body = 2;
 }
 
-message CallRequest {
+message Request {
 	// service to call
 	string service = 1;
 	// endpoint to call
@@ -26,28 +27,19 @@ message CallRequest {
 	string request = 3;
 }
 
-message CallResponse {
+message Response {
 	// response body
 	string response = 1;
 }
 
-message StreamRequest {
-	// service to call
-	string service = 1;
-	// endpoint to call
-	string endpoint = 2;
-	// request body
-	string request = 3;
-}
-
-message PublishRequest {
+message Event {
 	// topic to publish to
 	string topic = 1;
 	// message to send
 	string body = 2;
 }
 
-message PublishResponse {
+message Status {
 	// delivery status e.g OK
 	string status = 1;
 }
