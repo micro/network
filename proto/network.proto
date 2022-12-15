@@ -1,0 +1,50 @@
+package mucp
+
+service Network {
+	rpc Call(CallRequest) returns (CallResponse) {}
+	rpc Stream(StreamRequest) returns (stream Message) {}
+	rpc Publish(PublishRequest) returns (PublishResponse) {}
+}
+
+message Message {
+	// map of message headers
+	map<string,string> header = 1;
+ 	// base64 encoded message body
+	bytes body = 2;
+}
+
+message CallRequest {
+	// service to call
+	string service = 1;
+	// endpoint to call
+	string endpoint = 2;
+	// request body
+	string request = 3;
+}
+
+message CallResponse {
+	// response body
+	string response = 1;
+}
+
+message StreamRequest {
+	// service to call
+	string service = 1;
+	// endpoint to call
+	string endpoint = 2;
+	// request body
+	string request = 3;
+}
+
+message PublishRequest {
+	// topic to publish to
+	string topic = 1;
+	// message to send
+	string body = 2;
+}
+
+message PublishResponse {
+	// delivery status e.g OK
+	string status = 1;
+}
+
