@@ -1,4 +1,8 @@
-package mucp
+syntax = "proto3";
+
+package mucp;
+
+option go_package = "./proto;mucp";
 
 service Network {
 	rpc Call(CallRequest) returns (CallResponse) {}
