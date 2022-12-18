@@ -164,7 +164,7 @@ All methods are transported as the `Micro-Method` header.
 Discovery encompasses two parts, the first is the discovery of servers which implement the MUCP protocol. This we believe 
 should be done via DNS SRV records, more details to be provided on the format in future. The second is the discovery of 
 services provided by those servers. This will involve advertising a catalog of services between servers baked into the 
-MUCP protocol itself. While Micro bakes in a registry, it's not clear that we want to advertise all services within it.
+MUCP protocol itself. While Micro includes a registry, it's not clear that we want to advertise all services within it.
 
 ## Transport
 
