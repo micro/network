@@ -18,6 +18,22 @@ initially intended simply for web pages. While frameworks and technologies
 have emerged to improve API based consumption of infrastructure services 
 we have yet to define anything for end user consumption.
 
+## Goals
+
+A few expressive goals for the protocol
+
+- simplicity by design and human readable
+- extensible via federation not protocol changes
+- consumable by clients and services alike
+
+## Non goals
+
+Things we don't care about
+
+- not looking to replace existing frameworks
+- not looking to raise investment from VCs
+- not looking to profit from the protocol
+
 ## Status
 
 Currently in the early design phase.
