@@ -36,7 +36,7 @@ Things we don't care about
 
 ## Status
 
-Currently in the early design phase.
+Looking at the initial MVP implementation of MUCP protocol 0.1
 
 ## Protocol
 
