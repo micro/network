@@ -69,10 +69,14 @@ func (n *Network) Connect() error {
 	}
 	defer ln.Close()
 
-	fmt.Printf("Listening on https://%v\n", n.Server.CertDomains()[0])
+	fmt.Printf("Listening on %v\n", n.Address())
 
 	// serve the handler
 	return http.Serve(ln, n.Options.Handler)
+}
+
+func (n *Network) Address() string {
+	return "https://" + n.Server.CertDomains()[0]
 }
 
 // WithHandler sets the handler used
