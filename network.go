@@ -3,10 +3,7 @@ package network
 import (
 	"fmt"
 	"net/http"
-	"net/http/httputil"
-	"net/url"
 	"os"
-	"strings"
 
 	"tailscale.com/tsnet"
 	"tailscale.com/types/logger"
@@ -22,21 +19,31 @@ type Options struct {
 	Token string
 	// Network name
 	Name string
+	// Network handler
+	Handler http.Handler
 }
 
 type Option func(*Options)
 
 func New(opts ...Option) *Network {
 	options := Options{
-		Name:  "network",
+		Name: "network",
+		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			fmt.Fprintln(w, "<html><body><h1>Micro Network</h1>")
+		}),
 		Token: os.Getenv("MICRO_NETWORK_TOKEN"),
 	}
 
+	// parse the options
 	for _, o := range opts {
 		o(&options)
 	}
 
-	srv := &tsnet.Server{
+	// create new network
+	net := new(Network)
+
+	// set the server
+	net.Server = &tsnet.Server{
 		Dir:       "./.network",
 		Logf:      logger.Discard,
 		Hostname:  options.Name,
@@ -44,10 +51,11 @@ func New(opts ...Option) *Network {
 		AuthKey:   options.Token,
 	}
 
-	return &Network{
-		Options: options,
-		Server:  srv,
-	}
+	// set the options
+	net.Options = options
+
+	// return the network
+	return net
 }
 
 func (n *Network) Close() error {
@@ -63,40 +71,15 @@ func (n *Network) Connect() error {
 
 	fmt.Printf("Listening on https://%v\n", n.Server.CertDomains()[0])
 
-	// Parse the target URL
-	apiURL, err := url.Parse("http://localhost:8080")
-	if err != nil {
-		return err
+	// serve the handler
+	return http.Serve(ln, n.Options.Handler)
+}
+
+// WithHandler sets the handler used
+func WithHandler(h http.Handler) Option {
+	return func(o *Options) {
+		o.Handler = h
 	}
-
-	// Create the api proxy
-	apiProxy := httputil.NewSingleHostReverseProxy(apiURL)
-
-	// Parse the target URL
-	webURL, err := url.Parse("http://localhost:8082")
-	if err != nil {
-		return err
-	}
-
-	// Create the web proxy
-	webProxy := httputil.NewSingleHostReverseProxy(webURL)
-
-	return http.Serve(ln, http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// serve the api
-		if strings.HasPrefix(r.URL.Path, "/api") {
-			r.URL.Path = strings.TrimPrefix(r.URL.Path, "/api")
-			apiProxy.ServeHTTP(w, r)
-			return
-		}
-
-		// set the header
-		r.Header.Set("Micro-API", "/api")
-
-		if strings.HasPrefix(r.URL.Path, "/") {
-			// serve the web proxy
-			webProxy.ServeHTTP(w, r)
-		}
-	}))
 }
 
 // WithName sets the network name
