@@ -1,4 +1,4 @@
-package network
+package mucp
 
 import (
 	"fmt"
@@ -25,7 +25,7 @@ type Options struct {
 
 type Option func(*Options)
 
-func New(opts ...Option) *Network {
+func NewNetwork(opts ...Option) *Network {
 	options := Options{
 		Name: "network",
 		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

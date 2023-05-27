@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/micro/network"
+	"github.com/micro/network/mucp"
 )
 
 func handler() http.Handler {
@@ -54,10 +54,10 @@ func main() {
 		log.Fatal("Missing MICRO_NETWORK_TOKEN")
 	}
 
-	net := network.New(
-		network.WithName("gateway"),
-		network.WithHandler(handler()),
-		network.WithToken(token),
+	net := mucp.NewNetwork(
+		mucp.WithName("gateway"),
+		mucp.WithHandler(handler()),
+		mucp.WithToken(token),
 	)
 
 	if err := net.Connect(); err != nil {
