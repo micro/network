@@ -5,9 +5,19 @@ package mucp;
 option go_package = "./proto;mucp";
 
 service Network {
+	rpc Connect(Conn) returns (Status) {}
+	rpc Close(Conn) returns (Status) {}
 	rpc Call(Request) returns (Response) {}
 	rpc Stream(stream Request) returns (stream Response) {}
 	rpc Publish(Event) returns (Status) {}
+}
+
+// Conn represents a new connection
+message Conn {
+	// client id
+	string id = 1;
+	// client secret
+	string secret = 2;
 }
 
 // Envelope for message encoding
@@ -42,5 +52,7 @@ message Event {
 message Status {
 	// delivery status e.g OK
 	string status = 1;
+	// any errors that occur
+	string error = 2;
 }
 

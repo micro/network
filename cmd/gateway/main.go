@@ -22,6 +22,15 @@ func handler() http.Handler {
 	apiProxy := httputil.NewSingleHostReverseProxy(apiURL)
 
 	// Parse the target URL
+	grpcURL, err := url.Parse("http://localhost:8081")
+	if err != nil {
+		log.Fatal("Failed to parse grpc URL: ", err)
+	}
+
+	// Create the grpc proxy
+	grpcProxy := httputil.NewSingleHostReverseProxy(grpcURL)
+
+	// Parse the target URL
 	webURL, err := url.Parse("http://localhost:8082")
 	if err != nil {
 		log.Fatal("Failed to parse web URL: ", err)
@@ -31,10 +40,17 @@ func handler() http.Handler {
 	webProxy := httputil.NewSingleHostReverseProxy(webURL)
 
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		ct := r.Header.Get("Content-Type")
+
 		// serve the api
-		if strings.HasPrefix(r.URL.Path, "/api") {
-			r.URL.Path = strings.TrimPrefix(r.URL.Path, "/api")
+		if strings.HasPrefix(ct, "application/json") {
 			apiProxy.ServeHTTP(w, r)
+			return
+		}
+
+		// serve grpc
+		if strings.HasPrefix(ct, "application/grpc") {
+			grpcProxy.ServeHTTP(w, r)
 			return
 		}
 
