@@ -5,15 +5,15 @@ package mucp;
 option go_package = "./proto;mucp";
 
 service Network {
-	rpc Connect(Conn) returns (Status) {}
-	rpc Close(Conn) returns (Status) {}
+	rpc Connect(Client) returns (Status) {}
+	rpc Close(Client) returns (Status) {}
 	rpc Call(Request) returns (Response) {}
 	rpc Stream(stream Request) returns (stream Response) {}
 	rpc Publish(Event) returns (Status) {}
 }
 
-// Conn represents a new connection
-message Conn {
+// Client represents a new client connection
+message Client {
 	// client id
 	string id = 1;
 	// client secret
