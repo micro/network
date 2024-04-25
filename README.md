@@ -26,14 +26,6 @@ A few expressive goals for the protocol
 - extensible via federation not protocol changes
 - consumable by clients and services alike
 
-## Non goals
-
-Things we don't care about
-
-- not looking to replace existing frameworks
-- not looking to raise investment from VCs
-- not looking to profit from the protocol
-
 ## Status
 
 Initial MVP implementation of MUCP protocol 0.1 in development.
